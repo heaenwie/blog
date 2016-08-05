@@ -1,0 +1,14 @@
+<%= @articles.each do |article| %>
+  <p>
+   <h2><%= article.title + ": " + article.author %></h2>
+   <p><%= article.content %></p>
+    <%= form_for(article, method: :delete) do |f| %>
+    <% end %><br>
+    <%= link_to('Edit Article', edit_article_path(article)) %>
+     <%= link_to('Show Article', article_path(article)) %><br>
+     <%= link_to 'Destroy', article_path(article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+  </p>
+<% end %>
+

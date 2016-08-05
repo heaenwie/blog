@@ -1,0 +1,16 @@
+<p>
+  <h1><%= @article.title %></h1>
+  <h2><%= @article.author %></h2>
+  <p><%= @article.content %></p>
+</p>
+<p>
+  <h2>Comments</h2>
+  <%= render @article.comments %>
+</p>
+<p>
+  <h2>Add a comment:</h2>
+  <%= render 'comments/form' %>
+</p>
+<%= link_to('Edit Article', edit_article_path) %>
+<%= link_to('Go to index', articles_path) %>
+
